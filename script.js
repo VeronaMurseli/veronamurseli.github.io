@@ -1,15 +1,31 @@
-/* TYPING-EFFEKT – nur eine Zeile */
 const typingText = "Hi, I'm Verona Murseli";
 let charIndex = 0;
+let deleting = false; // für Löschen
 const typingEl = document.getElementById("typing");
 
 function typeLoop() {
-  typingEl.textContent = typingText.substring(0, charIndex + 1);
-  charIndex = (charIndex + 1) % (typingText.length + 1);
-  setTimeout(typeLoop, 150); // Geschwindigkeit anpassen
+  if (!deleting) {
+    // Tippen
+    typingEl.textContent = typingText.substring(0, charIndex + 1);
+    charIndex++;
+    if (charIndex === typingText.length) {
+      deleting = true; // nach dem kompletten Text löschen
+      setTimeout(typeLoop, 1000); // kleine Pause am Ende
+      return;
+    }
+  } else {
+    // Löschen
+    typingEl.textContent = typingText.substring(0, charIndex - 1);
+    charIndex--;
+    if (charIndex === 0) {
+      deleting = false; // von vorne tippen
+    }
+  }
+  setTimeout(typeLoop, deleting ? 50 : 150); // schneller löschen, langsamer tippen
 }
 
 typeLoop();
+
 
 
 /* SCROLL REVEAL */
