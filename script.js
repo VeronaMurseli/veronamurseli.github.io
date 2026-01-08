@@ -1,15 +1,16 @@
-/* TYPING – NUR EINMAL */
-const text = "Hi, I'm Verona Murseli";
-let index = 0;
+/* TYPING-EFFEKT – nur eine Zeile */
+const typingText = "Hi, I'm Verona Murseli";
+let charIndex = 0;
 const typingEl = document.getElementById("typing");
-function typeOnce() {
-  if (index < text.length) {
-    typingEl.textContent += text.charAt(index);
-    index++;
-    setTimeout(typeOnce, 90);
-  }
+
+function typeLoop() {
+  typingEl.textContent = typingText.substring(0, charIndex + 1);
+  charIndex = (charIndex + 1) % (typingText.length + 1);
+  setTimeout(typeLoop, 150); // Geschwindigkeit anpassen
 }
-typeOnce();
+
+typeLoop();
+
 
 /* SCROLL REVEAL */
 const sections = document.querySelectorAll("section");
