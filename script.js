@@ -2,7 +2,6 @@
 const texts = [
   "Hi, I'm Verona Murseli",
   "Business Informatics Student",
-  "Future ERP Consultant"
 ];
 
 let i = 0, j = 0;
