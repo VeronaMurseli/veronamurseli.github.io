@@ -2,29 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Verona Murseli | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LANGUAGE + THEME SWITCH -->
-<div class="lang-switch">
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('de')">DE</button>
-  <button onclick="toggleTheme()">🌗</button>
-</div>
-
 <!-- NAVIGATION -->
 <nav>
   <ul>
-    <li><a href="#home" data-en="Home" data-de="Start">Home</a></li>
-    <li><a href="#about" data-en="About" data-de="Über mich">About</a></li>
-    <li><a href="#experience" data-en="Experience" data-de="Berufserfahrung">Experience</a></li>
-    <li><a href="#education" data-en="Education" data-de="Ausbildung">Education</a></li>
-    <li><a href="#skills" data-en="Skills" data-de="Kenntnisse">Skills</a></li>
-    <li><a href="#certificates" data-en="Certificates" data-de="Zertifikate">Certificates</a></li>
-    <li><a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -32,58 +25,105 @@
 <header id="home" class="hero">
   <img src="IMG_8183.JPG" alt="Verona Murseli">
 
-  <h1 class="name">Verona Murseli</h1>
-  <h2 class="typing" id="typing"></h2>
+  <!-- TYPING -->
+  <h1 id="typing"></h1>
 
-  <p
-    data-en="Business Informatics (B.Sc.)"
-    data-de="Wirtschaftsinformatik (B.Sc.)">
-  </p>
+  <!-- FIXER TEXT -->
+  <p class="subtitle">Business Informatics (B.Sc.)</p>
 
   <div class="buttons">
-    <a href="Verona_Murseli_Lebenslauf.pdf" download class="btn"
-       data-en="Download CV"
-       data-de="Lebenslauf herunterladen"></a>
-
+    <a href="Verona_Murseli_Lebenslauf.pdf" download class="btn">
+      Download CV
+    </a>
     <a href="https://www.linkedin.com/in/verona-murseli-357348324/"
        target="_blank"
-       class="btn"
-       data-en="View LinkedIn"
-       data-de="LinkedIn Profil"></a>
+       class="btn">
+      View LinkedIn
+    </a>
   </div>
 </header>
 
-<!-- SECTIONS -->
-<section id="about" class="reveal">
-  <h2 data-en="About Me" data-de="Über mich"></h2>
-  <p data-en="I am a highly motivated Business Informatics student with a strong interest in ERP systems, SAP S/4HANA and digital process optimization."
-     data-de="Ich bin eine hochmotivierte Studentin der Wirtschaftsinformatik mit starkem Interesse an ERP-Systemen, SAP S/4HANA und digitaler Prozessoptimierung."></p>
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a highly motivated Business Informatics student with a strong interest
+    in ERP systems, SAP S/4HANA and digital process optimization.
+    I combine technical knowledge with a business-oriented mindset.
+  </p>
 </section>
 
-<section id="experience" class="reveal">
-  <h2 data-en="Professional Experience" data-de="Berufserfahrung"></h2>
-  <p>Mercedes-Benz AG · ERP Business Solutions</p>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Professional Experience</h2>
+
+  <h3>Internship – Mercedes-Benz AG | ERP Business Solutions</h3>
+  <ul>
+    <li>Work in the global SAP S/4HANA template OneERP (Freight product team)</li>
+    <li>Cross-department collaboration with logistics, IT and process management</li>
+    <li>Creation and execution of test cases, quality assurance and documentation</li>
+    <li>Agile working environment (Scrum, Daily Meetings, Sprint Planning)</li>
+  </ul>
+
+  <h3>Student Assistant – Accounting & Discrete Mathematics</h3>
+  <ul>
+    <li>Correction and evaluation of assignments in Discrete Mathematics</li>
+    <li>Tutoring and academic support in Accounting</li>
+  </ul>
 </section>
 
-<section id="education" class="reveal">
-  <h2 data-en="Education" data-de="Ausbildung"></h2>
+<!-- EDUCATION -->
+<section id="education">
+  <h2>Education</h2>
+  <ul>
+    <li>Since 2023 – B.Sc. Business Informatics, Hochschule für Technik Stuttgart</li>
+    <li>2021 – 2023 | Fachhochschulreife, Erich-Bracher-Schule</li>
+    <li>2015 – 2021 | Secondary School Certificate, Gottlieb-Daimler-Realschule</li>
+    <li>2011 – 2015 | Primary School, Schubartschule Ludwigsburg</li>
+  </ul>
 </section>
 
-<section id="skills" class="reveal">
-  <h2 data-en="Skills" data-de="Kenntnisse"></h2>
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <p>
+    <strong>Programming:</strong><br>
+    Java, JavaScript, PHP, HTML, CSS, XML<br><br>
+
+    <strong>Tools:</strong><br>
+    SAP ERP, SAP NetWeaver, Jira, Confluence, Microsoft Office
+  </p>
+
+  <h3>Languages</h3>
+  <ul>
+    <li>German – Native</li>
+    <li>Albanian – Native</li>
+    <li>English – Fluent</li>
+  </ul>
 </section>
 
-<section id="certificates" class="reveal">
-  <h2 data-en="Certificates" data-de="Zertifikate"></h2>
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <h2>Certificates & Scholarships</h2>
+  <ul>
+    <li>Deutschlandstipendium</li>
+    <li>e-fellows.net Scholarship</li>
+    <li>DATEV Certificate – Financial Accounting</li>
+  </ul>
 </section>
 
-<section id="contact" class="reveal">
-  <h2 data-en="Contact" data-de="Kontakt"></h2>
-  <p>📍 Ludwigsburg · 📧 veronamurseli@hotmail.com</p>
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    📍 Ludwigsburg, Germany<br>
+    📧 veronamurseli@hotmail.com<br>
+    📞 +49 157 50413602
+  </p>
 </section>
 
 <footer>
-  <p>© 2025 Verona Murseli</p>
+  © 2025 Verona Murseli
 </footer>
 
 <script src="script.js"></script>
