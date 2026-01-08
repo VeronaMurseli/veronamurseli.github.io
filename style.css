@@ -1,7 +1,13 @@
+/* =====================
+   RESET
+   ===================== */
 * {
   box-sizing: border-box;
 }
 
+/* =====================
+   BASE
+   ===================== */
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
@@ -51,6 +57,7 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 28px;
   padding: 18px;
   margin: 0;
@@ -71,7 +78,7 @@ nav a::after {
   width: 0;
   height: 2px;
   background: #e5e7eb;
-  transition: 0.3s ease;
+  transition: width 0.3s ease;
 }
 
 nav a:hover::after {
@@ -84,6 +91,7 @@ nav a:hover::after {
 .hero {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -103,6 +111,7 @@ nav a:hover::after {
   margin: 0;
 }
 
+/* Typing effect */
 .typing {
   border-right: 2px solid #e5e7eb;
   padding-right: 6px;
@@ -114,7 +123,12 @@ nav a:hover::after {
    BUTTONS
    ===================== */
 .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -124,15 +138,14 @@ nav a:hover::after {
   color: #e5e7eb;
   text-decoration: none;
   font-weight: 600;
-  margin: 10px;
-  display: inline-block;
   border: 1px solid #2a2a2f;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
   background: #e5e7eb;
   color: #0f0f10;
+  transform: translateY(-2px);
 }
 
 /* =====================
@@ -146,7 +159,7 @@ section {
   border-radius: 22px;
   opacity: 0;
   transform: translateY(60px);
-  transition: 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 section.active {
@@ -186,8 +199,12 @@ footer {
     padding: 40px 22px;
   }
 
+  .buttons {
+    flex-direction: column;
+  }
+
   .btn {
     width: 100%;
-    margin: 8px 0;
+    max-width: 280px;
   }
 }
