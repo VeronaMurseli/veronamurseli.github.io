@@ -1,13 +1,5 @@
-/* =====================
-   RESET
-   ===================== */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-/* =====================
-   BASE
-   ===================== */
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
@@ -16,13 +8,13 @@ body {
   scroll-behavior: smooth;
 }
 
-/* =====================
-   LANGUAGE SWITCH
-   ===================== */
+/* SWITCH */
 .lang-switch {
   position: fixed;
   top: 14px;
   right: 14px;
+  display: flex;
+  gap: 8px;
   z-index: 1000;
 }
 
@@ -32,103 +24,70 @@ body {
   color: #e5e7eb;
   padding: 8px 14px;
   border-radius: 999px;
-  font-weight: 600;
   cursor: pointer;
 }
 
-/* =====================
-   NAVIGATION
-   ===================== */
+/* NAV */
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(15, 15, 16, 0.85);
+  background: rgba(15,15,16,0.85);
   backdrop-filter: blur(14px);
-  transition: transform 0.4s ease;
+  transition: transform .4s ease;
   z-index: 999;
 }
 
-nav.hidden {
-  transform: translateY(-100%);
-}
+nav.hidden { transform: translateY(-100%); }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 28px;
   padding: 18px;
   margin: 0;
 }
 
 nav a {
-  text-decoration: none;
   color: #e5e7eb;
-  font-weight: 500;
+  text-decoration: none;
   position: relative;
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #e5e7eb;
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* =====================
-   HERO
-   ===================== */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 120px 20px;
 }
 
 .hero img {
   width: 130px;
   border-radius: 50%;
   margin-bottom: 30px;
-  border: 2px solid #2a2a2f;
 }
 
-.hero h1 {
+.name {
   font-size: 3rem;
-  font-weight: 700;
   margin: 0;
 }
 
-/* Typing effect */
 .typing {
-  border-right: 2px solid #e5e7eb;
-  padding-right: 6px;
+  font-size: 1.6rem;
+  border-right: 2px solid;
   white-space: nowrap;
   overflow: hidden;
 }
 
-/* =====================
-   BUTTONS
-   ===================== */
+/* BUTTONS */
 .buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 16px;
-  margin-top: 40px;
-  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .btn {
@@ -137,20 +96,15 @@ nav a:hover::after {
   background: #1a1a1d;
   color: #e5e7eb;
   text-decoration: none;
-  font-weight: 600;
   border: 1px solid #2a2a2f;
-  transition: all 0.3s ease;
 }
 
 .btn:hover {
   background: #e5e7eb;
   color: #0f0f10;
-  transform: translateY(-2px);
 }
 
-/* =====================
-   SECTIONS
-   ===================== */
+/* SECTIONS */
 section {
   max-width: 900px;
   margin: 120px auto;
@@ -159,7 +113,7 @@ section {
   border-radius: 22px;
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: .8s;
 }
 
 section.active {
@@ -167,44 +121,28 @@ section.active {
   transform: translateY(0);
 }
 
-h2 {
-  margin-top: 0;
-  font-size: 2.2rem;
-}
-
-/* =====================
-   FOOTER
-   ===================== */
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 50px;
+  padding: 40px;
   color: #9ca3af;
 }
 
-/* =====================
-   MOBILE
-   ===================== */
+/* LIGHT MODE */
+body.light {
+  background: #f5f7fa;
+  color: #1f2937;
+}
+
+body.light section { background: white; }
+body.light nav { background: rgba(255,255,255,0.85); }
+body.light .btn {
+  background: white;
+  color: #1f2937;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  section {
-    margin: 70px 14px;
-    padding: 40px 22px;
-  }
-
-  .buttons {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 280px;
-  }
+  nav ul { flex-direction: column; }
+  .buttons { flex-direction: column; }
 }
