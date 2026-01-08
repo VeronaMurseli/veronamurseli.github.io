@@ -1,63 +1,35 @@
-<script>
 /* =====================
    TYPING EFFECT
    ===================== */
-const texts = ["Hi, I'm Verona Murseli"];
-let index = 0;
+const texts = [
+  "Hi, I'm Verona Murseli",
+  "Business Informatics Student",
+  "Future ERP Consultant"
+];
+
+let textIndex = 0;
 let charIndex = 0;
 const typingEl = document.getElementById("typing");
 
 function type() {
-  if (charIndex < texts[index].length) {
-    typingEl.textContent += texts[index].charAt(charIndex);
+  if (charIndex < texts[textIndex].length) {
+    typingEl.textContent += texts[textIndex].charAt(charIndex);
     charIndex++;
     setTimeout(type, 90);
   } else {
-    setTimeout(erase, 2000);
+    setTimeout(erase, 1800);
   }
 }
 
 function erase() {
   if (charIndex > 0) {
-    typingEl.textContent = texts[index].substring(0, charIndex - 1);
+    typingEl.textContent = texts[textIndex].substring(0, charIndex - 1);
     charIndex--;
-    setTimeout(erase, 50);
+    setTimeout(erase, 45);
   } else {
-    setTimeout(type, 800);
+    textIndex = (textIndex + 1) % texts.length;
+    setTimeout(type, 600);
   }
 }
 
 type();
-
-/* =====================
-   SCROLL REVEAL
-   ===================== */
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      section.classList.add("active");
-    }
-  });
-});
-
-/* =====================
-   NAV HIDE / SHOW
-   ===================== */
-let lastScroll = 0;
-const nav = document.querySelector("nav");
-
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
-
-  if (currentScroll > lastScroll && currentScroll > 100) {
-    nav.classList.add("hidden");
-  } else {
-    nav.classList.remove("hidden");
-  }
-
-  lastScroll = currentScroll;
-});
-</script>
