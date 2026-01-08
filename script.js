@@ -27,17 +27,19 @@ revealOnScroll();
 /* MOBILE NAV HIDE ON SCROLL */
 let lastScroll = 0;
 const navEl = document.querySelector("nav");
+
 window.addEventListener("scroll", () => {
-  if (window.innerWidth < 769) {
+  if (window.innerWidth < 769) { // nur auf Handy
     const currentScroll = window.pageYOffset;
     if (currentScroll > lastScroll && currentScroll > 50) {
-      navEl.classList.add("hidden");
+      navEl.classList.add("hidden"); // nach unten scroll → nav weg
     } else {
-      navEl.classList.remove("hidden");
+      navEl.classList.remove("hidden"); // scroll nach oben → nav wieder
     }
     lastScroll = currentScroll;
   }
 });
+
 
 /* THEME TOGGLE */
 function toggleTheme() {
