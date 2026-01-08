@@ -1,58 +1,55 @@
-/* TYPING */
-const texts = [
-  "Hi, I'm Verona Murseli",
-  "Business Informatics Student",
-];
+/* =====================
+   TYPING – NUR EINMAL
+   ===================== */
+const text = "Hi, I'm Verona Murseli";
+let index = 0;
+const typingEl = document.getElementById("typing");
 
-let i = 0, j = 0;
-const el = document.getElementById("typing");
-
-function type() {
-  if (j < texts[i].length) {
-    el.textContent += texts[i][j++];
-    setTimeout(type, 90);
-  } else setTimeout(erase, 1500);
-}
-
-function erase() {
-  if (j > 0) {
-    el.textContent = texts[i].substring(0, --j);
-    setTimeout(erase, 45);
-  } else {
-    i = (i + 1) % texts.length;
-    setTimeout(type, 600);
+function typeOnce() {
+  if (index < text.length) {
+    typingEl.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeOnce, 90);
   }
 }
-type();
+typeOnce();
 
-/* SCROLL REVEAL */
+/* =====================
+   SCROLL REVEAL
+   ===================== */
 const sections = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
-  sections.forEach(s => {
-    if (s.getBoundingClientRect().top < window.innerHeight - 100)
-      s.classList.add("active");
+
+const revealOnScroll = () => {
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top < window.innerHeight - 120) {
+      section.classList.add("active");
+    }
   });
-});
+};
 
-/* NAV HIDE */
-let last = 0;
-const nav = document.querySelector("nav");
-window.addEventListener("scroll", () => {
-  let cur = window.pageYOffset;
-  nav.classList.toggle("hidden", cur > last && cur > 100);
-  last = cur;
-});
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
 
-/* THEME */
+/* =====================
+   THEME TOGGLE
+   ===================== */
 function toggleTheme() {
   document.body.classList.toggle("light");
-  localStorage.setItem("theme",
-    document.body.classList.contains("light") ? "light" : "dark");
-}
-if (localStorage.getItem("theme") === "light")
-  document.body.classList.add("light");
 
-/* LANGUAGE (simple) */
+  localStorage.setItem(
+    "theme",
+    document.body.classList.contains("light") ? "light" : "dark"
+  );
+}
+
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light");
+}
+
+/* =====================
+   LANGUAGE SWITCH
+   ===================== */
 function setLang(lang) {
   document.querySelectorAll("[data-en]").forEach(el => {
     el.textContent = el.dataset[lang];
