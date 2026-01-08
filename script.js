@@ -1,8 +1,9 @@
 /* =====================
-   TYPING – NUR EINMAL
+   TYPING – NUR EIN TEXT
    ===================== */
 const text = "Hi, I'm Verona Murseli";
 let index = 0;
+
 const typingEl = document.getElementById("typing");
 
 function typeOnce() {
@@ -12,6 +13,7 @@ function typeOnce() {
     setTimeout(typeOnce, 90);
   }
 }
+
 typeOnce();
 
 /* =====================
