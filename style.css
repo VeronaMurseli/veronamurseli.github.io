@@ -63,8 +63,23 @@ nav a:hover {
   padding: 6px 14px;
   cursor: pointer;
   z-index: 9999; /* WICHTIG */
+   
 }
-
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  font-size: 2rem;
+  background: #1a1a1d;
+  color: #e5e7eb;
+  border: 1px solid #2a2a2f;
+  border-radius: 12px;
+  padding: 6px 14px;
+  cursor: pointer;
+  z-index: 9999; /* WICHTIG */
+   
+}
 
 /* =====================
    HERO
