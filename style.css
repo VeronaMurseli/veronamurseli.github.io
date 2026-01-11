@@ -139,11 +139,10 @@ nav a:hover {
 /* =====================
    CERTIFICATES / ACHIEVEMENTS
    ===================== */
-
 #certificates {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 120px auto;
-  padding: 60px;
+  padding: 60px 20px;
   background: #151517;
   border-radius: 22px;
   opacity: 0;
@@ -158,26 +157,51 @@ nav a:hover {
 
 #certificates h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
+}
+
+/* Grid für die Karten */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
 }
 
 /* einzelne Karte / Zertifikat */
 .certificate-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 22px;
   background: #1a1a1d;
-  border-radius: 12px;
-  margin-bottom: 16px;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
   border: 1px solid #2a2a2f;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.certificate-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  border: 2px solid #2a2a2f;
 }
 
 .certificate-card h3 {
   font-size: 1.1rem;
+  margin-bottom: 8px;
   color: #e5e7eb;
-  margin: 0;
+}
+
+.certificate-card p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 12px;
 }
 
 .cert-btn {
@@ -196,6 +220,14 @@ nav a:hover {
   color: #0f0f10;
   transform: translateY(-2px);
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 /* =====================
