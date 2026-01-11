@@ -7,9 +7,12 @@ let deleting = false;
 const typingEl = document.getElementById("typing");
 
 function typeLoop() {
+  if (!typingEl) return;
+
   if (!deleting) {
     typingEl.textContent = typingText.substring(0, charIndex + 1);
     charIndex++;
+
     if (charIndex === typingText.length) {
       deleting = true;
       setTimeout(typeLoop, 1000);
@@ -18,10 +21,12 @@ function typeLoop() {
   } else {
     typingEl.textContent = typingText.substring(0, charIndex - 1);
     charIndex--;
+
     if (charIndex === 0) {
       deleting = false;
     }
   }
+
   setTimeout(typeLoop, deleting ? 50 : 150);
 }
 
@@ -32,14 +37,14 @@ typeLoop();
    ===================== */
 const sections = document.querySelectorAll("section");
 
-const revealOnScroll = () => {
+function revealOnScroll() {
   sections.forEach(section => {
     const top = section.getBoundingClientRect().top;
     if (top < window.innerHeight - 120) {
       section.classList.add("active");
     }
   });
-};
+}
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
@@ -50,8 +55,32 @@ revealOnScroll();
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("nav");
 
-menuToggle.addEventListener("click", () => {
-  nav.classList.toggle("open");
+if (menuToggle && nav) {
+  menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
+}
+
+/* =====================
+   MOBILE MENU BUTTON
+   HIDE / SHOW ON SCROLL
+   ===================== */
+let lastScrollY = window.pageYOffset;
+
+window.addEventListener("scroll", () => {
+  if (window.innerWidth < 769 && menuToggle) {
+    const currentScrollY = window.pageYOffset;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      // Scroll down → hide button
+      menuToggle.classList.add("hidden");
+    } else {
+      // Scroll up → show button
+      menuToggle.classList.remove("hidden");
+    }
+
+    lastScrollY = currentScrollY;
+  }
 });
 
 /* =====================
