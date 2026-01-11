@@ -227,6 +227,15 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
+.certificate-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%; /* rund */
+  margin-bottom: 16px;
+  background: #2a2a2f;
+  padding: 12px; /* etwas Abstand im Kreis */
+}
 
 
 
