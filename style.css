@@ -337,4 +337,27 @@ footer {
     top: 8px;
     right: 8px;
   }
+   .skills-languages {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.language-item {
+  background: #1a1a1d;
+  color: #e5e7eb;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 500;
+  border: 1px solid #2a2a2f;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.language-item:hover {
+  background: #e5e7eb;
+  color: #0f0f10;
+  transform: translateY(-2px);
+}
+
 }
