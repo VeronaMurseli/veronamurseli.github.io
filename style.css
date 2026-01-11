@@ -136,6 +136,24 @@ nav a:hover {
   color: #0f0f10;
   transform: translateY(-2px);
 }
+/* Kleine Buttons für Zertifikate */
+.btn-small {
+  margin-left: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #1a1a1d;
+  color: #e5e7eb;
+  text-decoration: none;
+  border: 1px solid #2a2a2f;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-small:hover {
+  background: #e5e7eb;
+  color: #0f0f10;
+  transform: translateY(-1px);
+}
 
 /* =====================
    SECTIONS
